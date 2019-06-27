@@ -15,7 +15,7 @@ whereas if allele 1 has 85% and allele 2 has 15% of reads then position is calle
 
 <b>Discovery of highly covered genomic regions Pipeline:</b></br>
 A)Parental sample were mapped to Kronos genomic reference and a pileup file was generated.</br>  
-samtools mpileup  -B -A -d 99999 -q 10 -f kronos_EI_v1.fasta  -t DP -b parent_bam_file.txt > parent_kronos.pileup.gz</br>
+samtools mpileup  -B -A -d 99999 -q 10 -f kronos_EI_v1.fasta  -t DP -b parent_bam_file.txt > parent_kronos.pileup</br>
 Where -q 10 consider only reads with MAPQ of 10 or more. parent_bam_file.txt contains name of sorted bam file for parental sample.</br>
 B)Genomic regions that were significantly covered were extracted.</br>
 >java -jar  MFbio.jar showform=no task=highcoverage srcdir=parent_kronos.pileup.gz file1=kronos_EI_v1.fasta.fai  destdir=kronos_high_coverage_17.bed p1=17 p2=500 p3=300</br>
