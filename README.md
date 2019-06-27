@@ -32,7 +32,7 @@ B)Variant file for parental file is generated:
 >java -jar MFbio.jar showform=no task=variant  srcdir=parent_DECaR.pileup.gz destdir=parental.var p1=1  p2=2 p3=0.1 </br>
 Where srcdir is pileup file generated at step A; destdir is name of output variant file; p1 number of samples in pileup file; p2 same as task=mutation2 command; p3 same as task=mutation2 command;  </br>
 
-C)Generate flanking sequence for each mutation position:
-java -jar MFbio.jar showform=no task=buildsampleseq  srcdir=/directoy/unique_mutation.mut  p1=100  p2=500 1=DECaR.fa 2=DECaR.fa.fai file1=parental.var</br>
+C)Generate flanking sequence for each mutation position:</br>
+>java -jar MFbio.jar showform=no task=buildsampleseq  srcdir=/directoy/unique_mutation.mut  p1=50  p2=200 1=DECaR.fa 2=DECaR.fa.fai file1=parental.var</br>
 Where 
 
