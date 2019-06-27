@@ -1,10 +1,10 @@
 # TILLinG-mutants
 Bioinformatics pipeline for the analysis of TILLinG mutants in conjunction with the new optimised reference sequence for tetraploid wheat
 <br/>Pipeline Commands:
-<br/>Mutation Calling Pipeline
-A) Generate pileup file for 100 samples:
->samtools mpileup  -B -A -d 99999 -q 10  -f parent_derived_ref.fa  -t DP -b bam_files_100_samples.txt > samples.pileup
-Where -q 10 consider only reads with MAPQ of 10 or more. bam_files_100_samples.txt contains name of sorted bam files for parental and 99 mutant samples.
+<br/>Mutation Calling Pipeline</br>
+A) Generate pileup file for 100 samples:</br>
+>samtools mpileup  -B -A -d 99999 -q 10  -f parent_derived_ref.fa  -t DP -b bam_files_100_samples.txt > samples.pileup</br>
+Where -q 10 consider only reads with MAPQ of 10 or more. bam_files_100_samples.txt contains name of sorted bam files for parental and 99 mutant samples.</br>
 
 B)Mutation Calling and generate Mutation file:
 >java -jar MFbio.jar showform=no task=mutation2  srcdir=samples.pileup.gz destdir=/dierectoy  p1=100  p2=3  p3=0.1
