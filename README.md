@@ -13,14 +13,13 @@ of samples in pileup file; p2 is minimum number of reads for a non-reference all
 to call a position heterozygous. For example, if p3=0.1 and allele 1 has 95% and allele 2 has 5% of reads then position is called homozygous,
 whereas if allele 1 has 85% and allele 2 has 15% of reads then position is called heterozygous.
 
-Discovery of highly covered genomic regions Pipeline:
-A)Parental sample were mapped to Kronos genomic reference and a pileup file was generated.  
-samtools mpileup  -B -A -d 99999 -q 10 -f kronos_EI_v1.fasta  -t DP -b parent_bam_file.txt > parent_kronos.pileup.gz
-Where -q 10 consider only reads with MAPQ of 10 or more. parent_bam_file.txt contains name of sorted bam file for parental sample.
-B)Genomic regions that were significantly covered were extracted.
+<b>Discovery of highly covered genomic regions Pipeline:</b></br>
+A)Parental sample were mapped to Kronos genomic reference and a pileup file was generated.</br>  
+samtools mpileup  -B -A -d 99999 -q 10 -f kronos_EI_v1.fasta  -t DP -b parent_bam_file.txt > parent_kronos.pileup.gz</br>
+Where -q 10 consider only reads with MAPQ of 10 or more. parent_bam_file.txt contains name of sorted bam file for parental sample.</br>
+B)Genomic regions that were significantly covered were extracted.</br>
 >java -jar  MFbio.jar showform=no task=highcoverage srcdir=parent_kronos.pileup.gz file1=kronos_EI_v1.fasta.fai  destdir=kronos_high_coverage_17.bed p1=17 p2=500 p3=300
-Where srcdir is generated pileup file in step A; file1 is index of Kronos fasta file; destdir refers to generated output bed file; p1 minimum depth or coverage;
-p2 
+Where srcdir is generated pileup file in step A; file1 is index of Kronos fasta file; destdir refers to generated output bed file; p1 minimum depth or coverage; p2 tail length; p3 maximum distance to merge 2 coninuous regions.
 
 
 
