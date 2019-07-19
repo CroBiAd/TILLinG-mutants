@@ -18,7 +18,7 @@ A) Generate pileup file for 100 samples:</br>
 Where -q 10 consider only reads with MAPQ of 10 or more. bam_files_100_samples.txt contains name of sorted bam files for parental and 99 mutant samples.</br>
 
 B)Mutation Calling and generate Mutation file:
->java -jar WHEATbio.jar showform=no task=mutations  srcdir=samples.pileup.gz destdir=/directoy  p1=100  p2=3  p3=0.1
+>java -jar WHEATbio.jar showform=no task=mutations  srcdir=samples.pileup.gz destdir=/directoy  p1=100  p2=3  p3=0.1 </br>
 Where srcdir is pileup file generated in step A; destdir is directory where output file unique_mutation.mut will be generated ; p1 is number
 of samples in pileup file; p2 is minimum number of reads for a non-reference allele (3 recommended); p3 is minimum ratio for minor allele 
 to call a position heterozygous. For example, if p3=0.1 and allele 1 has 95% and allele 2 has 5% of reads then position is called homozygous,
