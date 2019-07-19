@@ -1,6 +1,7 @@
 
 # TILLinG-mutants
-Bioinformatics pipeline for the analysis of TILLinG mutants in conjunction with the new optimised reference sequence for tetraploid wheat
+Bioinformatics pipeline for the analysis of TILLinG mutants in conjunction with the new optimised reference sequence for tetraploid wheat.</br>
+To be able to run the following commands make sure Java 1.8 or more is installed on your machine, then download WHEATbio.jar from this repsitiry to your local machine. Simply refer to WHEATbio.jar file in all the following command.
 <br/>Pipeline Commands:
 
 <b>Discovery of highly covered genomic regions to construct DECaR (Durum Exome Capture Reference):</b></br>
