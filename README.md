@@ -37,7 +37,7 @@ samtools mpileup -B -A -d 99999 -q 10 -f DECaR.fa -t DP -b bam_files_100_samples
 Where `-q 10` considers only reads with MAPQ of 10 or more and `bam_files_100_samples.txt` contains the names of sorted bam files for both the control and 99 mutant samples.
 B. Call the mutations.
 ```bash  
-java -jar WHEATbio.jar showform=no task=mutations2 srcdir=samples.pileup.gz destdir=/directoy p1=100 p2=3 p3=0.1
+java -jar WHEATbio.jar showform=no task=mutations srcdir=samples.pileup.gz destdir=/directoy p1=100 p2=3 p3=0.1
 ```
 Where `srcdir` is the pileup file generated in step A; `destdir` is the directory where the output file `unique_mutation.mut` will be generated; `p1` is the number of samples in the pileup file; `p2` is the minimum number of reads for a non-reference allele (3 is recommended); `p3` is the minimum proportion for a minor allele to call a position heterozygous. For example, if `p3=0.1` and allele 1 has 95% and allele 2 has 5% of reads then the position is called homozygous, whereas if allele 1 has 85% and allele 2 has 15% of reads then the position is called heterozygous.
 #### Extraction of flanking sequences for mutation positions in the control sample
