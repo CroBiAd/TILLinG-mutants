@@ -49,7 +49,7 @@ B. Generate the variant file for the control file.
 ```bash
 java -jar WHEATbio.jar showform=no task=variant srcdir=control_DECaR.pileup.gz destdir=control.var p1=1 p2=2 p3=0.1
 ```
-Where `srcdir` is the pileup file generated at step A; `destdir` is the name of the output variant file; `p1` is the number of samples in the pileup file; `p2` and `p3` are the same as in the mutation calling step above (`task=mutation`).
+Where `srcdir` is the pileup file generated at step A; `destdir` is the name of the output variant file; `p1` is the number of samples in the pileup file; `p2` and `p3` are the same as in the mutation calling step above (`task=mutations`).
 
 C. Generate the flanking sequences of mutation positions.
 ```bash
